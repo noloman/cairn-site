@@ -3,27 +3,129 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cairn — a browser for iPad</title>
-<meta name="description" content="Cairn is a private browser for iPad with Spaces, restorable sessions and AI that runs on the device.">
-<link rel="stylesheet" href="style.css">
+<title>Cairn — a private browser for iPad</title>
+<meta name="description" content="Cairn is a private web browser for iPad. Spaces keep sign-ins apart, Cairns bring a whole session back weeks later, and summaries are written on the iPad itself.">
+<meta name="theme-color" content="#111c33">
+<meta property="og:title" content="Cairn — a private browser for iPad">
+<meta property="og:description" content="Spaces that keep sign-ins apart, sessions you can pick up weeks later, and AI that runs on the iPad.">
+<meta property="og:image" content="https://cairn.manulorenzo.me/img/icon.png">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/young-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+<header class="site-header wrap">
+  <a class="brand" href="/"><img src="/img/icon.png" alt="" width="34" height="34">Cairn</a>
+  <nav class="site-nav" aria-label="Site">
+    <a href="/privacy/">Privacy</a>
+    <a href="/support/">Support</a>
+    <a class="button" href="https://testflight.apple.com/join/XaeMt1Qh">Try the beta</a>
+  </nav>
+</header>
+
 <main>
-<header><nav><a href="./">Cairn</a><a href="privacy/">Privacy</a><a href="support/">Support</a></nav></header>
-<h1>A browser for research you come back to</h1>
-<p class="lede">Cairn is a private web browser for iPad. It keeps each Space's sign-ins apart, freezes a session into a Cairn you can restore weeks later, and runs its summaries on the iPad itself.</p>
-<h2>What it does</h2>
-<ul>
-<li><strong>Spaces</strong> with their own tabs and their own cookie store.</li>
-<li><strong>Cairns</strong>: save everything open in a Space, with scroll positions, and bring it back later.</li>
-<li><strong>On-device AI</strong> with Apple Intelligence: page summaries, questions across your tabs, Tidy and Compare.</li>
-<li><strong>Blocking</strong> of ads, trackers and cookie banners, with consent pop-ups answered "reject all".</li>
-<li>A sidebar, a command bar, split view and Apple Pencil highlighting.</li>
-</ul>
-<p>Cairn needs iPadOS 26 or later. The AI features need an iPad that supports Apple Intelligence.</p>
-<p><a class="cta" href="https://testflight.apple.com/join/XaeMt1Qh">Try the beta on TestFlight</a></p>
-<hr>
-<p class="muted">No account, no analytics, no ads. <a href="privacy/">Read the privacy policy</a>.</p>
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div>
+      <p class="eyebrow">Web browser for iPad</p>
+      <h1 id="hero-title">Leave a marker.<br><em>Come back</em> to it.</h1>
+      <p class="lede">Research happens in episodes. Cairn keeps each project in its own Space, freezes a session so you can pick it up weeks later, and writes page summaries on the iPad instead of a server.</p>
+      <div class="actions">
+        <a class="button" href="https://testflight.apple.com/join/XaeMt1Qh">Try the beta on TestFlight</a>
+        <p class="note">Coming to the App Store. No account needed.</p>
+      </div>
+    </div>
+
+    <div>
+      <ol class="cairn" aria-label="Example Cairns, saved sessions">
+        <li class="stone"><b>Lisbon trip</b><span><i class="dot" style="background:var(--sand)"></i>7 tabs · yesterday</span></li>
+        <li class="stone"><b>Pricing research</b><span><i class="dot" style="background:var(--iris)"></i>5 tabs · 3 weeks ago</span></li>
+        <li class="stone"><b>Competitor landscape</b><span><i class="dot" style="background:var(--tide)"></i>5 tabs · 4 days ago</span></li>
+        <li class="stone"><b>Thesis sources</b><span><i class="dot" style="background:var(--moss)"></i>12 tabs · 2 months ago</span></li>
+      </ol>
+      <p class="cairn-caption">A Cairn is everything that was open in a Space, with where you were on each page.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="feature" aria-labelledby="f-cairns">
+      <div class="feature-text">
+        <p class="eyebrow">Cairns</p>
+        <h2 id="f-cairns">Freeze a session. Pick it up weeks later.</h2>
+        <p>Save every tab in a Space as a named Cairn, and restore it when the project comes back. <strong>Each page reopens where you left it</strong>, and restoring never closes what you already have open.</p>
+        <p>Cairn names them for you from the tab titles, and you can attach typed notes or Apple Pencil ink.</p>
+      </div>
+      <figure class="device"><img src="/img/02-cairns.webp" width="1100" height="1467" loading="lazy" alt="The Cairns panel over a Wikipedia page, listing two saved sessions with Restore buttons."></figure>
+    </section>
+
+    <section class="feature" aria-labelledby="f-spaces">
+      <div class="feature-text">
+        <p class="eyebrow">Spaces</p>
+        <h2 id="f-spaces">Two identities, side by side.</h2>
+        <p>Every Space has its own tabs, its own search engine and <strong>its own cookie store</strong>, so you can be signed in to the same site as two different people. Put a page from one Space next to a page from another in split view.</p>
+        <ul class="tints" aria-label="Space colours">
+          <li style="--c:var(--slate)">Slate</li>
+          <li style="--c:var(--ember)">Ember</li>
+          <li style="--c:var(--moss)">Moss</li>
+          <li style="--c:var(--tide)">Tide</li>
+          <li style="--c:var(--iris)">Iris</li>
+          <li style="--c:var(--plum)">Plum</li>
+          <li style="--c:var(--sand)">Sand</li>
+          <li style="--c:var(--rose)">Rose</li>
+        </ul>
+      </div>
+      <figure class="device"><img src="/img/03-split.webp" width="1100" height="1467" loading="lazy" alt="Split view with a Wikipedia article on the left and the arXiv home page on the right."></figure>
+    </section>
+
+    <section class="feature" aria-labelledby="f-ai">
+      <div class="feature-text">
+        <p class="eyebrow">On-device AI</p>
+        <h2 id="f-ai">Summaries that never leave the iPad.</h2>
+        <p>Summarise a page, ask a question across the tabs in a Space, compare pages in a table or tidy loose tabs into Cairns. <strong>It all runs on the iPad</strong> with Apple Intelligence, so it works on a plane and no page text is sent anywhere.</p>
+        <p>On an iPad without Apple Intelligence, you can download an open model instead. Cairn tells you the size before anything is fetched.</p>
+      </div>
+      <figure class="device"><img src="/img/05-summary.webp" width="1100" height="1467" loading="lazy" alt="A summary panel over a Wikipedia article, with the note that it was written on the device."></figure>
+    </section>
+  </div>
+
+  <section class="facts wrap" aria-labelledby="facts-title">
+    <p class="eyebrow">Privacy</p>
+    <h2 id="facts-title">Nothing about your browsing is ours to see.</h2>
+    <dl class="fact-grid">
+      <div><dt>No account</dt><dd>There is nothing to sign up for, and no server of ours between you and the web.</dd></div>
+      <div><dt>No analytics</dt><dd>No tracking, no crash reporter that sees your pages, no ads. This site has none either.</dd></div>
+      <div><dt>Blocking built in</dt><dd>Ads and trackers are blocked before the request is made, and cookie pop-ups are answered “reject all”.</dd></div>
+      <div><dt>Your iCloud, not ours</dt><dd>Spaces, tabs and Cairns sync through your private iCloud database. History and page text stay on the iPad.</dd></div>
+    </dl>
+    <p class="note"><a href="/privacy/">Read the privacy policy</a></p>
+  </section>
+
+  <section class="facts wrap" aria-labelledby="details-title">
+    <p class="eyebrow">Before you install</p>
+    <h2 id="details-title">What you need, and what it costs.</h2>
+    <dl class="fact-grid">
+      <div><dt>iPadOS 26 or later</dt><dd>Cairn is made for iPad, with a sidebar, a command bar, split view, Stage Manager and Apple Pencil.</dd></div>
+      <div><dt>Apple Intelligence, or a downloaded model</dt><dd>Apple Intelligence needs an iPad with M1 or later, or A17 Pro. Other iPads can download an open model (about 1 GB) the first time they use an AI feature.</dd></div>
+      <div><dt>21 days with everything</dt><dd>Every feature is unlocked from the first launch. After that, Cairn keeps working with one Space.</dd></div>
+      <div><dt>One purchase, no subscription</dt><dd>A single in-app purchase unlocks every Space for good.</dd></div>
+    </dl>
+  </section>
+
+  <section class="closing wrap" aria-labelledby="closing-title">
+    <h2 id="closing-title">Try Cairn before it ships.</h2>
+    <p>The beta is open on TestFlight. Tell us which sites break and what you would pay; both answers help.</p>
+    <a class="button" href="https://testflight.apple.com/join/XaeMt1Qh">Join the TestFlight beta</a>
+  </section>
 </main>
+
+<footer class="site-footer wrap">
+  <span>© 2026 Manuel Lorenzo Parejo</span>
+  <nav aria-label="Footer">
+    <a href="/privacy/">Privacy</a>
+    <a href="/support/">Support</a>
+  </nav>
+</footer>
+
 </body>
 </html>

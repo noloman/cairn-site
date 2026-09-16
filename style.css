@@ -1,25 +1,378 @@
+/* Cairn — cairn.manulorenzo.me
+   Colours come from the app icon (night sky over deep water, pale stones) and the
+   app's own Space tints. Fonts are served from this site: no third-party requests. */
+
+@font-face {
+  font-family: "Young Serif";
+  src: url("/fonts/young-serif-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/fonts/hanken-grotesk-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plex Mono";
+  src: url("/fonts/plex-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
 :root {
-  --bg: #f7f6f2; --text: #1d1d1f; --muted: #5c5c63; --accent: #5146d8; --rule: #dedcd4;
+  --night: #111c33;
+  --deep: #0b3f4c;
+  --stone: #ece7dd;
+  --stone-shade: #cfc8ba;
+  --mist: #a9b4c0;
+  --lichen: #7ce5f5;
+  --rule: rgba(236, 231, 221, 0.14);
+
+  /* Space tints, dark-mode values from SpaceTint.swift */
+  --slate: #9aa5b1;
+  --ember: #fb923c;
+  --moss: #a3e635;
+  --tide: #22d3ee;
+  --iris: #a5b4fc;
+  --plum: #e879f9;
+  --sand: #fcd34d;
+  --rose: #fda4af;
+
+  --display: "Young Serif", Georgia, serif;
+  --body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --gutter: clamp(16px, 5vw, 56px);
+  --measure: 34rem;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #151517; --text: #f2f2f4; --muted: #a6a6ad; --accent: #a49cff; --rule: #2e2e33; }
-}
+
 * { box-sizing: border-box; }
-body {
-  margin: 0; background: var(--bg); color: var(--text);
-  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+html {
+  background: var(--night);
+  color-scheme: dark;
 }
-main { max-width: 680px; margin: 0 auto; padding: 48px 16px 80px; }
-header nav { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
-a { color: var(--accent); }
-header nav a { text-decoration: none; font-weight: 600; }
-h1 { font-size: 2.2rem; line-height: 1.2; margin: 0 0 12px; }
-h2 { font-size: 1.25rem; margin: 36px 0 8px; }
-p, li { color: var(--text); }
-.lede { font-size: 1.2rem; color: var(--muted); }
-.muted { color: var(--muted); font-size: 0.9rem; }
-hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
-.cta {
-  display: inline-block; margin-top: 8px; padding: 12px 20px; border-radius: 12px;
-  background: var(--accent); color: var(--bg); font-weight: 600; text-decoration: none;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--stone);
+  font: 400 1.0625rem/1.6 var(--body);
+  background:
+    radial-gradient(60rem 40rem at 70% -10%, rgba(34, 211, 238, 0.10), transparent 60%),
+    linear-gradient(180deg, var(--night) 0%, #0f2a3f 55%, var(--deep) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--lichen); text-underline-offset: 0.18em; }
+a:hover { color: var(--stone); }
+:focus-visible {
+  outline: 2px solid var(--lichen);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+main { flex: 1; }
+.site-header, main, .site-footer { width: 100%; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--stone);
+  text-decoration: none;
+  font-family: var(--display);
+  font-size: 1.35rem;
+}
+.brand img { width: 34px; height: 34px; border-radius: 8px; }
+.site-nav { display: flex; align-items: center; gap: clamp(12px, 3vw, 28px); }
+.site-nav a {
+  color: var(--mist);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--stone); }
+
+.button {
+  display: inline-block;
+  padding: 0.8em 1.25em;
+  border-radius: 999px;
+  background: var(--stone);
+  color: var(--night);
+  font-weight: 650;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.button:hover { background: #fff; color: var(--night); transform: translateY(-1px); }
+.site-nav .button { color: var(--night); padding: 0.55em 1em; font-size: 0.9rem; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  padding-top: clamp(32px, 8vw, 96px);
+  padding-bottom: clamp(56px, 10vw, 120px);
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin: 0 0 18px;
+}
+h1, h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+.hero h1 em { font-style: normal; color: var(--lichen); }
+.lede {
+  max-width: var(--measure);
+  margin: 24px 0 32px;
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  color: var(--mist);
+}
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.note { font-size: 0.9rem; color: var(--mist); margin: 0; }
+
+/* The signature: a cairn built from the sessions people actually save. */
+.cairn {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.stone + .stone { margin-top: -5px; }
+.stone {
+  background: linear-gradient(180deg, var(--stone) 0%, var(--stone-shade) 100%);
+  color: var(--night);
+  box-shadow: 0 10px 24px rgba(3, 10, 22, 0.45), inset 0 -4px 0 rgba(17, 28, 51, 0.12), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+  min-width: max-content;
+  padding: 16px 18px;
+  text-align: center;
+  line-height: 1.25;
+  animation: settle 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.15) both;
+}
+.stone b { display: block; font-weight: 650; font-size: 1rem; }
+.stone span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #4a5566;
+  white-space: nowrap;
+}
+.stone .dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+/* Irregular radii, so each reads as a flat river stone rather than a pill or an oval.
+   The bottom stone is laid first and the top one lands last. */
+.stone:nth-child(1) { z-index: 4; width: 58%; border-radius: 64px 80px 58px 72px / 34px 42px 30px 38px; animation-delay: 0.75s; transform: rotate(-1.5deg); }
+.stone:nth-child(2) { z-index: 3; width: 74%; border-radius: 80px 66px 88px 60px / 40px 34px 44px 30px; animation-delay: 0.5s; transform: rotate(1deg); }
+.stone:nth-child(3) { z-index: 2; width: 88%; border-radius: 70px 96px 74px 90px / 36px 46px 34px 42px; animation-delay: 0.25s; transform: rotate(-0.6deg); }
+.stone:nth-child(4) { z-index: 1; width: 100%; border-radius: 96px 84px 100px 90px / 46px 40px 48px 42px; animation-delay: 0s; padding: 20px 18px; }
+
+@keyframes settle {
+  from { opacity: 0; translate: 0 -28px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+.cairn-caption {
+  margin: 20px auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--mist);
+  max-width: 22rem;
+}
+
+/* ---------- Features ---------- */
+
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+  padding: clamp(48px, 8vw, 96px) 0;
+  border-top: 1px solid var(--rule);
+}
+.feature:nth-of-type(even) .feature-text { order: 2; }
+.feature h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; }
+.feature p { max-width: var(--measure); color: var(--mist); margin: 18px 0 0; }
+.feature p strong { color: var(--stone); font-weight: 600; }
+
+.device {
+  margin: 0;
+  justify-self: center;
+  width: min(100%, 420px);
+  padding: 10px;
+  border-radius: 30px;
+  background: #0a1222;
+  box-shadow: 0 30px 60px rgba(3, 10, 22, 0.55), 0 0 0 1px rgba(236, 231, 221, 0.08);
+}
+.device img { border-radius: 21px; }
+
+.tints {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tints li {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  padding: 5px 10px 5px 8px;
+  border-radius: 999px;
+  background: rgba(236, 231, 221, 0.06);
+  border: 1px solid var(--rule);
+  color: var(--stone);
+}
+.tints li::before {
+  content: "";
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  margin-right: 7px;
+  vertical-align: 0;
+  background: var(--c);
+}
+
+/* ---------- Facts ---------- */
+
+.facts .note { margin-top: 32px; }
+.facts {
+  padding-block: clamp(56px, 9vw, 110px);
+  border-top: 1px solid var(--rule);
+}
+.facts h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); max-width: 20ch; }
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 40px;
+  margin: 40px 0 0;
+}
+.fact-grid dt { font-weight: 650; color: var(--stone); }
+.fact-grid dd { margin: 6px 0 0; color: var(--mist); }
+
+/* ---------- Closing ---------- */
+
+.closing {
+  text-align: center;
+  padding-block: clamp(56px, 9vw, 110px);
+  border-top: 1px solid var(--rule);
+}
+.closing h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+.closing p { color: var(--mist); max-width: 30rem; margin: 16px auto 28px; }
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 28px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--mist);
+}
+.site-footer nav { display: flex; gap: 20px; }
+.site-footer a { color: var(--mist); }
+
+/* ---------- Text pages (privacy, support) ---------- */
+
+.page {
+  max-width: 44rem;
+  padding-top: clamp(32px, 6vw, 72px);
+  padding-bottom: clamp(56px, 8vw, 96px);
+}
+.page h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.05; }
+.page .updated { font-family: var(--mono); font-size: 0.78rem; color: var(--mist); margin: 14px 0 0; }
+.page .lede { margin: 28px 0 8px; }
+.page h2 {
+  font-size: 1.45rem;
+  margin: 44px 0 10px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+.page p { color: #d9d4ca; margin: 0 0 14px; }
+.page p strong { color: var(--stone); }
+
+.qa { margin: 0; }
+.qa dt { font-weight: 650; margin-top: 26px; }
+.qa dd { margin: 6px 0 0; color: #d9d4ca; }
+
+.contact {
+  margin: 28px 0 0;
+  padding: 22px 24px;
+  border-radius: 18px;
+  background: rgba(236, 231, 221, 0.06);
+  border: 1px solid var(--rule);
+}
+.contact p { margin: 0; }
+.contact a { font-weight: 600; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .fact-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+  .fact-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero, .feature { grid-template-columns: minmax(0, 1fr); }
+  .feature:nth-of-type(even) .feature-text { order: 0; }
+  .cairn { max-width: 26rem; margin: 0 auto; }
+  .site-nav a:not(.button) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stone { animation: none; }
+  .button { transition: none; }
+  .button:hover { transform: none; }
 }
