@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cairn — iPad를 위한 프라이빗 브라우저</title>
+<meta name="description" content="Cairn은 iPad를 위한 프라이빗 웹 브라우저입니다. 스페이스가 로그인을 분리하고, 케른이 몇 주 뒤에도 세션 전체를 되살리며, 페이지 요약은 iPad 안에서 작성됩니다.">
+<meta name="theme-color" content="#1a2740">
+<link rel="canonical" href="https://cairn.manulorenzo.me/ko/">
+
+<link rel="alternate" hreflang="en" href="https://cairn.manulorenzo.me/">
+
+<link rel="alternate" hreflang="es" href="https://cairn.manulorenzo.me/es/">
+
+<link rel="alternate" hreflang="fr" href="https://cairn.manulorenzo.me/fr/">
+
+<link rel="alternate" hreflang="de" href="https://cairn.manulorenzo.me/de/">
+
+<link rel="alternate" hreflang="it" href="https://cairn.manulorenzo.me/it/">
+
+<link rel="alternate" hreflang="pt-BR" href="https://cairn.manulorenzo.me/pt-br/">
+
+<link rel="alternate" hreflang="nl" href="https://cairn.manulorenzo.me/nl/">
+
+<link rel="alternate" hreflang="ja" href="https://cairn.manulorenzo.me/ja/">
+
+<link rel="alternate" hreflang="ko" href="https://cairn.manulorenzo.me/ko/">
+
+<link rel="alternate" hreflang="zh-Hans" href="https://cairn.manulorenzo.me/zh/">
+
+<link rel="alternate" hreflang="sv" href="https://cairn.manulorenzo.me/sv/">
+
+<link rel="alternate" hreflang="x-default" href="https://cairn.manulorenzo.me/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cairn — iPad를 위한 프라이빗 브라우저">
+<meta property="og:description" content="로그인을 분리하는 스페이스, 몇 주 뒤에도 이어갈 수 있는 세션, iPad 안에서 실행되는 AI.">
+<meta property="og:url" content="https://cairn.manulorenzo.me/ko/">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cairn.manulorenzo.me/img/og/ko.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/young-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cairn","operatingSystem":"iPadOS 26","applicationCategory":"BrowserApplication","offers":{"@type":"Offer","price":"19.99","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6812412204"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Cairn은 무료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "모든 기능을 21일간 사용할 수 있습니다. 이후에는 19.99달러 한 번의 구매로 모든 스페이스를 영구히 사용할 수 있으며, 구독도 상위 등급도 없습니다."}}, {"@type": "Question", "name": "Apple Intelligence 없이도 작동하나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 브라우징, 스페이스, 케른, 차단 기능은 추가 요소가 전혀 필요하지 않습니다. AI 기능은 대신 다운로드한 오픈 모델(약 1GB, 한 번만 받으면 됨)로도 실행할 수 있습니다."}}, {"@type": "Question", "name": "내 데이터가 서버로 전송되나요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. Cairn 서버라는 것은 존재하지 않습니다. 스페이스, 탭, 케른은 당신의 개인 iCloud 데이터베이스를 통해 동기화되며, 페이지 요약은 iPad에서 작성됩니다."}}, {"@type": "Question", "name": "Safari를 대체할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "가능합니다. Cairn은 Apple에 기본 브라우저 권한을 신청해 두었고, 승인되면 다른 앱의 링크를 Cairn에서 열 수 있게 됩니다. 현재는 Apple의 승인을 기다리는 중입니다."}}, {"@type": "Question", "name": "iPhone 버전도 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "아직은 없습니다. Cairn은 사이드바와 분할 화면이 제 역할을 하는 iPad를 먼저 위해 만들어졌습니다."}}]}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header wrap">
+  <a class="brand" href="/ko/"><img src="/img/icon.png" alt="" width="34" height="34">Cairn</a>
+  <nav class="site-nav" aria-label="Site">
+    <a href="/ko/#features">기능</a>
+    <a href="/ko/compare/">비교</a>
+    <a href="/ko/whats-new/">새로운 소식</a>
+    <a href="/ko/support/">지원</a>
+    <details class="lang">
+      <summary aria-label="언어 선택">ko</summary>
+      <div class="lang-menu" role="menu">
+        
+        <a href="/" role="menuitem">English</a>
+        
+        <a href="/es/" role="menuitem">Español</a>
+        
+        <a href="/fr/" role="menuitem">Français</a>
+        
+        <a href="/de/" role="menuitem">Deutsch</a>
+        
+        <a href="/it/" role="menuitem">Italiano</a>
+        
+        <a href="/pt-br/" role="menuitem">Português (Brasil)</a>
+        
+        <a href="/nl/" role="menuitem">Nederlands</a>
+        
+        <a href="/ja/" role="menuitem">日本語</a>
+        
+        <a href="/ko/" role="menuitem" aria-current="true">한국어</a>
+        
+        <a href="/zh/" role="menuitem">简体中文</a>
+        
+        <a href="/sv/" role="menuitem">Svenska</a>
+        
+      </div>
+    </details>
+    <a class="button" href="https://apps.apple.com/app/id6812412204">Cairn 받기</a>
+  </nav>
+</header>
+
+
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div>
+      <p class="eyebrow">iPad용 웹 브라우저</p>
+      <h1 id="hero-title">표시를 남기세요.<br><em>다시 돌아오세요</em> , 그 자리로.</h1>
+      <p class="lede">리서치는 한 번에 끝나지 않고 여러 번에 나뉘어 진행됩니다. Cairn은 프로젝트마다 별도의 스페이스에 담아두고, 세션을 얼려서 몇 주 뒤에도 이어갈 수 있게 하며, 페이지 요약은 서버가 아니라 iPad에서 작성합니다.</p>
+      <div class="actions">
+        <a class="button store-badge" href="https://apps.apple.com/app/id6812412204">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M16.5 3c.15 1.1-.3 2.2-1 3-.7.8-1.85 1.45-2.95 1.35-.17-1.05.35-2.15 1.02-2.9.75-.85 2-1.45 2.93-1.45z"/>
+    <path d="M20.6 17.1c-.5 1.1-.75 1.6-1.4 2.55-.9 1.35-2.2 3.05-3.8 3.05-1.4.05-1.75-.9-3.65-.9-1.9 0-2.3.9-3.65.9-1.6.05-2.8-1.5-3.7-2.85-2.55-3.75-2.8-8.15-1.25-10.5.95-1.5 2.55-2.45 4.25-2.45 1.7 0 2.75.9 4.15.9 1.35 0 2.15-.9 4.15-.9 1.5 0 3.1.8 4.15 2.2-3.65 2-3.05 7.2.75 8.9z"/>
+  </svg>
+  <span class="label"><small>App Store에서</small><strong>다운로드</strong></span>
+</a>
+
+        <p class="note">21일간 무료로 체험할 수 있습니다. 계정이 필요하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="hero-visual">
+        <div class="ipad"><img src="/img/02-cairns.webp" width="1100" height="1467" alt=""></div>
+        <ol class="cairn" aria-label="케른 예시, 저장된 세션">
+          
+          <li class="stone"><b>리스본 여행</b><span><i class="dot" style="background:var(--sand)"></i>탭 7개 · 어제</span></li>
+          
+          <li class="stone"><b>요금 조사</b><span><i class="dot" style="background:var(--iris)"></i>탭 5개 · 3주 전</span></li>
+          
+          <li class="stone"><b>경쟁사 분석</b><span><i class="dot" style="background:var(--tide)"></i>탭 5개 · 4일 전</span></li>
+          
+          <li class="stone"><b>논문 참고 자료</b><span><i class="dot" style="background:var(--moss)"></i>탭 12개 · 2개월 전</span></li>
+          
+        </ol>
+      </div>
+      <p class="cairn-caption">케른은 한 스페이스에서 열려 있던 모든 것과, 각 페이지에서 보던 위치까지 담고 있습니다.</p>
+    </div>
+  </section>
+
+  <div class="wrap" id="features">
+    
+    <section class="feature" aria-labelledby="f-02-cairns">
+      <div class="feature-text">
+        <p class="eyebrow">케른</p>
+        <h2 id="f-02-cairns">세션을 얼려두세요. 몇 주 뒤에도 그대로.</h2>
+        <p>스페이스에 열려 있는 모든 탭을 이름이 있는 케른으로 저장하고, 프로젝트가 다시 필요할 때 복원하세요. <strong>각 페이지는 보던 위치 그대로 다시 열립니다</strong>. 복원해도 이미 열려 있던 것들은 닫히지 않습니다.</p>
+        <p>케른의 이름은 탭 제목에서 자동으로 지어지며, 텍스트 메모나 Apple Pencil 필기를 함께 첨부할 수 있습니다.</p>
+        
+      </div>
+      <figure class="device"><img src="/img/02-cairns.webp" width="1100" height="1467" loading="lazy" alt="Wikipedia 페이지 위에 표시된 케른 패널. 복원 버튼이 있는 저장된 세션 2개가 나열되어 있다."></figure>
+    </section>
+    
+    <section class="feature" aria-labelledby="f-03-split">
+      <div class="feature-text">
+        <p class="eyebrow">스페이스</p>
+        <h2 id="f-03-split">두 개의 정체성을, 나란히.</h2>
+        <p>모든 스페이스는 자신만의 탭, 자신만의 검색 엔진, 그리고 <strong>자신만의 쿠키 저장소</strong>를 가집니다. 같은 사이트에 서로 다른 두 사람으로 동시에 로그인할 수 있죠. 한 스페이스의 페이지를 다른 스페이스의 페이지와 나란히 분할 화면으로 볼 수도 있습니다.</p>
+        
+        
+        <ul class="tints" aria-label="스페이스 색상">
+          
+          <li style="--c:var(--slate)">슬레이트</li>
+          
+          <li style="--c:var(--ember)">잉걸</li>
+          
+          <li style="--c:var(--moss)">이끼</li>
+          
+          <li style="--c:var(--tide)">조수</li>
+          
+          <li style="--c:var(--iris)">아이리스</li>
+          
+          <li style="--c:var(--plum)">자두</li>
+          
+          <li style="--c:var(--sand)">모래</li>
+          
+          <li style="--c:var(--rose)">로즈</li>
+          
+        </ul>
+        
+      </div>
+      <figure class="device"><img src="/img/03-split.webp" width="1100" height="1467" loading="lazy" alt="왼쪽에는 Wikipedia 문서, 오른쪽에는 arXiv 홈페이지가 있는 분할 화면."></figure>
+    </section>
+    
+    <section class="feature" aria-labelledby="f-05-summary">
+      <div class="feature-text">
+        <p class="eyebrow">기기 내 AI</p>
+        <h2 id="f-05-summary">iPad를 벗어나지 않는 요약.</h2>
+        <p>페이지를 요약하고, 스페이스 안의 탭 전체에 질문하고, 페이지를 표로 비교하거나, 흩어진 탭을 케른으로 정리하세요. <strong>모두 iPad 안에서</strong> Apple Intelligence로 처리되므로 비행기 안에서도 작동하고, 페이지 내용이 어디로도 전송되지 않습니다.</p>
+        <p>Apple Intelligence를 지원하지 않는 iPad에서는 대신 오픈 모델을 다운로드할 수 있습니다. Cairn은 다운로드 전에 용량을 먼저 알려줍니다.</p>
+        
+      </div>
+      <figure class="device"><img src="/img/05-summary.webp" width="1100" height="1467" loading="lazy" alt="Wikipedia 문서 위에 표시된 요약 패널. 기기에서 작성되었다는 안내가 함께 표시되어 있다."></figure>
+    </section>
+    
+  </div>
+
+  <section class="grid-section wrap" aria-labelledby="grid-title">
+    <p class="eyebrow">그 밖의 기능들</p>
+    <h2 id="grid-title">일주일쯤 써봐야 눈에 띄는 부분들.</h2>
+    <div class="card-grid">
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-.8 0-1.5-.7-1.5-1.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5c.8 0 1.5-.7 1.5-1.5z"/></svg>
+        <h3>읽기 도구, 듣기, 오프라인 저장</h3>
+        <p>깔끔한 기사 보기 화면을 소리 내어 읽거나 비행을 위해 저장할 수 있습니다.</p>
+      </div>
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l.9-3.6L15.6 5.7a1.5 1.5 0 0 1 2.1 0l.6.6a1.5 1.5 0 0 1 0 2.1L7.6 19.1z"/><path d="M14 7.4l2.6 2.6"/></svg>
+        <h3>Pencil 하이라이트</h3>
+        <p>Apple Pencil로 어떤 페이지든 표시하고, 여백에 메모를 남기세요.</p>
+      </div>
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.6-3 8.3-7 9.5-4-1.2-7-4.9-7-9.5V6z"/><path d="M9 12l2 2 4-4.2"/></svg>
+        <h3>차단 기능 기본 탑재</h3>
+        <p>광고와 트래커는 요청이 전송되기 전에 차단되고, 쿠키 팝업도 자동으로 처리됩니다.</p>
+      </div>
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10a6 6 0 1 1 12 0v4l1.6 2.6H4.4L6 14z"/><path d="M9.5 19a2.5 2.5 0 0 0 5 0"/></svg>
+        <h3>페이지 변화 감시</h3>
+        <p>지켜보고 있는 페이지가 바뀌면, 직접 새로고침하지 않아도 Cairn이 알려줍니다.</p>
+      </div>
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/><path d="M9 6.5h6M9 17.5h6M6.5 9v6M17.5 9v6"/></svg>
+        <h3>명령 바</h3>
+        <p>입력만으로 어떤 탭, 스페이스, 설정으로도 이동하세요. 키보드 단축키도 모두 지원합니다.</p>
+      </div>
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        <h3>분할 화면</h3>
+        <p>두 페이지를 나란히, 서로 다른 두 스페이스에서 가져온 페이지라도 상관없습니다.</p>
+      </div>
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10.5a3.5 3.5 0 0 0 .5-6.96A5.5 5.5 0 0 0 7.2 9.5 4 4 0 0 0 7 18z"/></svg>
+        <h3>당신의 iCloud, 우리의 것이 아닙니다</h3>
+        <p>스페이스, 탭, 케른은 당신의 개인 iCloud 데이터베이스를 통해 동기화됩니다.</p>
+      </div>
+      
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8V6.5A1.5 1.5 0 0 1 6.5 5H8M19 8V6.5A1.5 1.5 0 0 0 17.5 5H16"/><path d="M5 16v1.5A1.5 1.5 0 0 0 6.5 19H8M19 16v1.5a1.5 1.5 0 0 1-1.5 1.5H16"/><path d="M9 10v2M15 10v2M9 15.5c.8.7 1.9 1 3 1s2.2-.3 3-1"/></svg>
+        <h3>잠글 수 있는 프라이빗 스페이스</h3>
+        <p>Face ID로 스페이스를 잠글 수 있어, 공유하는 iPad에서도 비밀을 지킬 수 있습니다.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="facts wrap" aria-labelledby="facts-title">
+    <p class="eyebrow">개인정보 보호</p>
+    <h2 id="facts-title">당신의 브라우징에 대해 우리가 볼 수 있는 건 아무것도 없습니다.</h2>
+    <dl class="fact-grid">
+      
+      <div><dt>계정 불필요</dt><dd>가입할 것도 없고, 당신과 웹 사이에 우리 서버가 끼어들지도 않습니다.</dd></div>
+      
+      <div><dt>분석 도구 없음</dt><dd>추적도, 당신의 페이지를 들여다보는 크래시 리포터도, 광고도 없습니다. 이 사이트에도 없습니다.</dd></div>
+      
+      <div><dt>차단 기능 기본 탑재</dt><dd>광고와 트래커는 요청이 전송되기 전에 차단되며, 쿠키 팝업에는 &#x27;모두 거부&#x27;로 자동 응답합니다.</dd></div>
+      
+      <div><dt>당신의 iCloud, 우리의 것이 아닙니다</dt><dd>스페이스, 탭, 케른은 당신의 개인 iCloud 데이터베이스를 통해 동기화됩니다. 기록과 페이지 내용은 iPad에만 남습니다.</dd></div>
+      
+    </dl>
+    <p class="note"><a href="/ko/privacy/">개인정보 처리방침 읽기</a></p>
+  </section>
+
+  <section class="facts wrap" aria-labelledby="details-title">
+    <p class="eyebrow">설치하기 전에</p>
+    <h2 id="details-title">필요한 것, 그리고 비용.</h2>
+    <dl class="fact-grid">
+      
+      <div><dt>iPadOS 26 이상</dt><dd>Cairn은 iPad를 위해 만들어졌습니다. 사이드바, 명령 바, 분할 화면, Stage Manager, Apple Pencil을 지원합니다.</dd></div>
+      
+      <div><dt>Apple Intelligence, 또는 다운로드한 모델</dt><dd>Apple Intelligence를 사용하려면 M1 이상 또는 A17 Pro를 탑재한 iPad가 필요합니다. 그 외 iPad는 AI 기능을 처음 사용할 때 오픈 모델(약 1GB)을 다운로드할 수 있습니다.</dd></div>
+      
+      <div><dt>21일간 모든 기능 제공</dt><dd>첫 실행부터 모든 기능이 열려 있습니다. 이후에도 Cairn은 스페이스 하나로 계속 사용할 수 있습니다.</dd></div>
+      
+      <div><dt>한 번 구매, 구독 없음</dt><dd>단 한 번의 인앱 구매로 모든 스페이스를 영구히 사용할 수 있습니다.</dd></div>
+      
+    </dl>
+  </section>
+
+  <section class="faq wrap" aria-labelledby="faq-title">
+    <p class="eyebrow">질문</p>
+    <h2 id="faq-title">물어보기 전에.</h2>
+    <div class="faq-list">
+      
+      <details class="faq-item">
+        <summary>Cairn은 무료인가요?</summary>
+        <p>모든 기능을 21일간 사용할 수 있습니다. 이후에는 19.99달러 한 번의 구매로 모든 스페이스를 영구히 사용할 수 있으며, 구독도 상위 등급도 없습니다.</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Apple Intelligence 없이도 작동하나요?</summary>
+        <p>네. 브라우징, 스페이스, 케른, 차단 기능은 추가 요소가 전혀 필요하지 않습니다. AI 기능은 대신 다운로드한 오픈 모델(약 1GB, 한 번만 받으면 됨)로도 실행할 수 있습니다.</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>내 데이터가 서버로 전송되나요?</summary>
+        <p>아니요. Cairn 서버라는 것은 존재하지 않습니다. 스페이스, 탭, 케른은 당신의 개인 iCloud 데이터베이스를 통해 동기화되며, 페이지 요약은 iPad에서 작성됩니다.</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Safari를 대체할 수 있나요?</summary>
+        <p>가능합니다. Cairn은 Apple에 기본 브라우저 권한을 신청해 두었고, 승인되면 다른 앱의 링크를 Cairn에서 열 수 있게 됩니다. 현재는 Apple의 승인을 기다리는 중입니다.</p>
+      </details>
+      
+      <details class="faq-item">
+        <summary>iPhone 버전도 있나요?</summary>
+        <p>아직은 없습니다. Cairn은 사이드바와 분할 화면이 제 역할을 하는 iPad를 먼저 위해 만들어졌습니다.</p>
+      </details>
+      
+    </div>
+  </section>
+
+  <section class="closing wrap" aria-labelledby="closing-title">
+    <h2 id="closing-title">Cairn은 App Store에 있습니다.</h2>
+    <p>21일간 무료로 체험한 뒤, 한 번의 구매로 모든 스페이스를 사용할 수 있습니다. 어떤 사이트가 제대로 작동하지 않는지, 얼마를 지불할 의향이 있는지 알려주세요. 두 답변 모두 큰 도움이 됩니다.</p>
+    <a class="button" href="https://apps.apple.com/app/id6812412204">App Store에서 다운로드</a>
+  </section>
+</main>
+
+<footer class="site-footer wrap">
+  <span>© 2026 Manuel Lorenzo Parejo — 당신의 어떤 것도 서버에 남기지 않는, iPad를 위한 프라이빗 브라우저.</span>
+  <nav aria-label="Footer">
+    <a href="/ko/compare/">비교</a>
+    <a href="/ko/whats-new/">새로운 소식</a>
+    <a href="/ko/privacy/">개인정보 보호</a>
+    <a href="/ko/support/">지원</a>
+  </nav>
+</footer>
+
+</body>
+</html>
